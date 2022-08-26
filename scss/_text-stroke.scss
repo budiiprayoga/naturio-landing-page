@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+@mixin text-stroke(
+  $fallback-color: transparent,
+  $color: transparent,
+  $stroke-color: #FF37CA,
+  $stroke-width: 0.2px
+) {
+  color: $fallback-color;
+  -webkit-text-fill-color: $color;
+  -webkit-text-stroke-color: $stroke-color;
+  -webkit-text-stroke-width: $stroke-width;
+}
+
+@mixin color-text ($color: #FF37CA) {
+  color: #FF37CA;
+}

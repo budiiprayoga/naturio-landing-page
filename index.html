@@ -1,0 +1,109 @@
+<!-- alt+Z -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Swiper.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <!-- My CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Cloudflare CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Naturio | Landing Page</title>
+</head>
+
+<body>
+    <section>
+        <div class="bg-circle"></div>
+        <header>
+            <div class="logo"><a href="index.html">
+                <h2 id="first">naturio</h2>
+                <h2 id="second">naturio</h2></a>
+            </div>
+            <div class="mobile-nav">
+                <!-- <i class="fa fa-bars"></i> -->
+            </div>
+            <!-- <div class="circle">
+                <div class="logo"></div>
+                <div class="text">
+                    <p>Naturio - Fresh Juice - </p>
+                </div>
+            </div> -->
+
+            <ul class="navigation">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">What's New</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            
+        </header>
+
+        <div class="content">
+            <div class="textBox">
+                <h2>Fresh Juice for Live Healthy.</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos eos obcaecati velit, enim
+                    aliquid provident aspernatur? Laudantium doloremque repellat in, dignissimos odit doloribus dolores
+                    neque accusantium consectetur quasi, beatae amet.</p>
+                <a href="#">Learn More</a>
+                
+            </div>
+        </div>
+
+        <div class="juiceBox">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="img/apple.png"></div>
+                    <div class="swiper-slide"><img src="img/grape.png"></div>
+                    <div class="swiper-slide"><img src="img/guava.png"></div>
+                    <div class="swiper-slide"><img src="img/mango.png"></div>
+                    <div class="swiper-slide"><img src="img/strawberry.png"></div>
+                </div>
+            </div>
+        </div>
+
+        <ul class="soc-med">
+            <li><a href="#"><img src="img/instagram.png"></a></li>
+            <li><a href="#"><img src="img/twitter.png"></a></li>
+            <li><a href="#"><img src="img/tiktok.png"></a></li>
+        </ul>
+    </section>
+
+    <!-- ---SLIDER--- -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <script>
+    var swiper = new Swiper('.swiper', {
+        effect: 'coverflow', 
+        grabCursor: true, 
+        centeredSlides: true, 
+        slidesPerView: 'auto', 
+        
+        coverflowEffect: { 
+            rotate: 0, 
+            stretch: 0, 
+            depth: 400, 
+            modifier: 1, 
+            slideShadows : true,
+        },
+        
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        loop: true,
+    });
+	</script>
+    <!-- ---END SLIDER--- -->
+
+    <!-- <script>
+        const text = document.querySelector('.text p');
+        text.innerHTML = text.innerText.split("").map((char, i) =>
+            `<span style = "transform:rotate(${i * 15.2}deg)">${char}</span>`).join("")
+    </script> -->
+</body>
+
+</html>
