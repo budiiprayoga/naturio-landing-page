@@ -1,109 +1,116 @@
-<!-- alt+Z -->
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Swiper.js -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-    <!-- My CSS -->
+    <!-- MY CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <!-- Cloudflare CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- BOXICONS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
     <title>Naturio | Landing Page</title>
 </head>
-
 <body>
-    <section>
-        <div class="bg-circle"></div>
-        <header>
-            <div class="logo"><a href="index.html">
-                <h2 id="first">naturio</h2>
-                <h2 id="second">naturio</h2></a>
-            </div>
-            <div class="mobile-nav">
-                <!-- <i class="fa fa-bars"></i> -->
-            </div>
-            <!-- <div class="circle">
-                <div class="logo"></div>
-                <div class="text">
-                    <p>Naturio - Fresh Juice - </p>
-                </div>
-            </div> -->
+    <!-- ========= HEADER ========= -->
+    <div class="bg__circle"></div>
+    <header class="header" id="header">
+        
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">
+                <h2 class="logo__naturio" id="first">naturio</h2>
+                <h2 class="logo__naturio" id="second">naturio</h2>
+            </a>
 
-            <ul class="navigation">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">What's New</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-            
-        </header>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Menu</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">What's New</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Contact</a>
+                    </li>
+                </ul>
 
-        <div class="content">
-            <div class="textBox">
-                <h2>Fresh Juice for Live Healthy.</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos eos obcaecati velit, enim
-                    aliquid provident aspernatur? Laudantium doloremque repellat in, dignissimos odit doloribus dolores
-                    neque accusantium consectetur quasi, beatae amet.</p>
-                <a href="#">Learn More</a>
-                
-            </div>
-        </div>
-
-        <div class="juiceBox">
-            <div class="swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="img/apple.png"></div>
-                    <div class="swiper-slide"><img src="img/grape.png"></div>
-                    <div class="swiper-slide"><img src="img/guava.png"></div>
-                    <div class="swiper-slide"><img src="img/mango.png"></div>
-                    <div class="swiper-slide"><img src="img/strawberry.png"></div>
+                <div class="nav__close" id="nav-close">
+                    <i class='bx bx-x'></i>
                 </div>
             </div>
-        </div>
+            <!-- MENU BUTTON -->
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
 
-        <ul class="soc-med">
-            <li><a href="#"><img src="img/instagram.png"></a></li>
-            <li><a href="#"><img src="img/twitter.png"></a></li>
-            <li><a href="#"><img src="img/tiktok.png"></a></li>
-        </ul>
-    </section>
+    <!-- ========= MAIN ========= -->
+    <main class="main">
+        <!-- ========= HOME ========= -->
+        <section class="home">
+            <div class="home__container container">
+                <div class="home__data">
+                    <h1 class="home__title">
+                        Fresh Juice for Live Healthy.
+                    </h1>
+                    <p class="home__desc">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat eum suscipit nostrum mollitia? Placeat, laudantium.
+                    </p>
+                    <a href="#" class="home__button">
+                        Learn More
+                    </a>
+                </div>
 
-    <!-- ---SLIDER--- -->
+                <div class="home__image">
+                    <div class="home__swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="img/apple.png"></div>
+                            <div class="swiper-slide"><img src="img/grape.png"></div>
+                            <div class="swiper-slide"><img src="img/guava.png"></div>
+                            <div class="swiper-slide"><img src="img/mango.png"></div>
+                            <div class="swiper-slide"><img src="img/strawberry.png"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="home__soc-med">
+                    <ul class="soc-med__list">
+                        <li class="soc-med__item">
+                            <a href="#" class="soc-med__link">
+                                <i class='bx bxl-instagram'></i>
+                            </a>
+                        </li>
+                        <li class="soc-med__item">
+                            <a href="#" class="soc-med__link">
+                                <i class='bx bxl-twitter'></i>
+                            </a>
+                        </li>
+                        <li class="soc-med__item">
+                            <a href="#" class="soc-med__link">
+                                <i class='bx bxl-tiktok'></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =========== SCRIPT ============ -->
+
+    <!-- SLIDER.JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
-    <script>
-    var swiper = new Swiper('.swiper', {
-        effect: 'coverflow', 
-        grabCursor: true, 
-        centeredSlides: true, 
-        slidesPerView: 'auto', 
-        
-        coverflowEffect: { 
-            rotate: 0, 
-            stretch: 0, 
-            depth: 400, 
-            modifier: 1, 
-            slideShadows : true,
-        },
-        
-        pagination: {
-            el: '.swiper-pagination',
-        },
-        loop: true,
-    });
-	</script>
-    <!-- ---END SLIDER--- -->
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
 
-    <!-- <script>
-        const text = document.querySelector('.text p');
-        text.innerHTML = text.innerText.split("").map((char, i) =>
-            `<span style = "transform:rotate(${i * 15.2}deg)">${char}</span>`).join("")
-    </script> -->
+    <!-- MAIN JS -->
+    <script src="js/main.js"></script>
 </body>
-
 </html>
