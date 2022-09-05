@@ -1,78 +1,82 @@
-@import 'font';
+@import 'variables';
 @import '_text-stroke';
 
+// ======================== BASE ========================
 * {
-    font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;   
-    margin: 0;
+    box-sizing: border-box;
     padding: 0;
+    margin: 0;
 }
 
-// body {
-//     position: absolute;
-//     background-color: #ffd037cc;
-// }
+body {
+    font-family: $body-font;
+    font-size: $normal-font-size;
+    background-color: $Background;
+    color: $text-color;
+}
 
-section {
-    background: #ffd037cc;
-    position: relative;
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+// ======================== REUSEABLE CLASSES ========================
+.container {
+    max-width: 100%;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+}
+
+.main {
+    overflow: hidden; // Animation
+}
+
+// ======================== HEADER & NAV ========================
+.bg__circle {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100vh;
-    padding: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .bg-circle {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #FF37CA;
-        clip-path: circle(70% at right -20%);
-    }
+    height: 100%;
+    background: #FF37CA;
+    clip-path: circle(70% at right -20%);
 }
 
-.circle {
-    // margin-left: 3em;
-    position: relative;
-    width: 110px / 2;
-    height: 110px;
-    // background: #ccc;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 3em;
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: $Background;
 }
 
-// NAVBAR
-@import '_text-stroke';
+//--- Animation Logo ---
+.logo__naturio {
+    position: absolute;
+    text-transform: capitalize;
+    display: block;
+    margin-top: -0.9em;
+    font-size: 3em;
+}
 
-.logo {
-    position: relative;
-    margin-top: -4.5em;
-    // background: url(../img/logo.png);
-    //background-size: cover;
-    // border-radius: 50%;
-    margin-left: 1.5em;
-    
-    h2 {
-        position: absolute;
-        font-size: 3em;
-        text-transform: capitalize;
-    }
+#first {
+    @include text-stroke;
+}
 
-    #first {
-        @include text-stroke;
-    }
+#second {
+    @include color-text;
+    animation: wave 4s ease-in-out infinite;
 
-    #second {
-        @include color-text;
-        animation: wave 4s ease-in-out infinite;
-    }
-    
     @keyframes wave {
         0%,100% {
             clip-path: polygon(0 49%, 15% 46%, 31% 49%, 63% 59%, 76% 55%, 85% 51%, 100% 48%, 100% 100%, 0% 100%);
@@ -83,168 +87,135 @@ section {
     }
 }
 
-.mobile-nav {
-    visibility: hidden;
-    opacity: 0;
-}
-
-
-// .text {
-//     position: absolute;
-//     width: 100%;
-//     height: 100%;
-//     animation: rotateText 10s linear infinite;
-//     margin-top: -0.7em;
-//     margin-left: 2em;
-    
-//     @keyframes rotateText {
-//         0% {
-//             transform: rotate(360deg);
-//         }
-//         100% {
-//             transform: rotate(0deg);
-//         }
-//     }
-
-//     span {
-//         position: absolute;
-//         left: 10%;
-//         // font-size: 1.2em;
-//         transform-origin: 0 60px;
-//     }
-// }
-
-header {
-    position: absolute;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    top: 0;
-    left: 0;
-    margin-top: 1.5em;
-    padding-top: 1em;
-    padding-right: 2.6em;;
-    padding-left: 0.5em;
-
-    .navigation {
-        position: relative;
-        display: flex;
-
-        li {
-            list-style: none;
-
-            a {
-                display: inline-block;
-                color: #ffff;
-                font-weight: 300;
-                text-decoration: none;
-                margin-left: 3em;
-            }
-
-            :hover {
-                color: #000;
-            }
-        }
-    }
-}
-
-.content {
-    // background: white;
+.nav {
     position: relative;
-    width: 100%;
+    height: $header-height;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 5em;
-    margin-left: -4em;
+}
 
-    .textBox {
-        position: relative;
-        max-width: 600px;
-        margin-right: 20px;
+.nav__logo {
+    width: auto;
+    padding-top: 1.9em;
+}
 
-        h2 {
-            max-width: 400px;
-            color: #FF37CA;
-            font-size: 3em;
-            margin-bottom: 10px;
-            line-height: 1.4em;
-        }
+.nav__toggle {
+    display: inline-flex;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: $text-nav;
+    margin-top: 0.4em;
+}
 
-        a {
-            display: inline-block;
-            padding: 8px 20px;
-            margin-top: 2em;
-            background: #FF37CA;
-            color: #ffff;
-            border-radius: 40px;
-            font-weight: 500;
-            text-decoration: none;
-            // transition: 0.5s ease-in-out;
-        }
-    }
-
-    .juiceBox {
-        width: 500px;
-        display: flex;
-        justify-content: flex-end;
-
-        img {
-            max-width: 15px;
-        }
+@media screen and (max-width: 768px) {
+    .nav__menu {
+        position: fixed;
+        background-color: $heading;
+        left: 0;
+        top: -100%;
+        box-shadow: 0 8px 24px hsla(2, 100%, 35%, .2);
+        width: 100%;
+        padding: 3.5rem 3rem;
+        border-radius: 0 0 2rem 2rem;
+        transition: top .4s;
     }
 }
 
-.soc-med {
-    left: 0;
-    width: 100%;
+.nav__list {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    row-gap: 2rem;
+}
+
+.nav__link, .nav__close {
+    color: $text-nav;
+}
+
+.nav__link {
+    font-weight: 300;
+}
+
+.nav__link:hover {
+    color: $text-color;
+    transition: .2s;
+}
+
+.nav__close {
     position: absolute;
-    display: block;
-    line-height: 3em;
-    justify-content: center;
-    align-items: center;
-    //background: #fff;
-    text-align: right;
-
-    li {
-        margin-right: 2em;
-        list-style: none;
-
-        a {
-            display: inline-block;
-            justify-content: center;
-            align-items: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            // background: #ffd037cc;
-            // transition: 0.5s ease-in-out;
-
-            :hover {
-                // background: #000;
-                transform: translateX(-10px);
-            }
-
-            img {
-                margin-right: 7px;
-                margin-top: 7px;
-                justify-content: center;
-                align-items: center;
-                filter: invert(1);
-                width: 25px;
-                // transform: scale(0.5);
-            }
-        }
-    }
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2.5rem;
+    cursor: pointer;
 }
 
-// ----SLIDER----
+// --- SHOW MENU ---
+.show-menu {
+    top: 0;
+}
 
-.swiper {
+// ======================== HOME ========================
+.home, .home__container {
+    position: relative;
+}
+
+.home__container {
+    padding-top: 8rem;
+    // height: 100vh;
+    display: grid;
+    row-gap: 1rem;
+}
+
+.home__title {
+    max-width: 400px;
+    font-size: 3em;
+    font-family: $body-font;
+    font-weight: 700;
+    color: $heading;
+    margin-bottom: .75rem;
+}
+
+.home__desc {
+    max-width: 400px;
+    font-weight: 400;
+    font-size: 20px;
+    color: $text-color;
+    margin-bottom: 1.5rem;
+}
+
+.home__button {
+    font-weight: 500;
+    display: inline-block;
+    background-color: $heading;
+    color: $text-nav;
+    padding: .5rem 3rem;
+    border-radius: 5em;
+    box-shadow: 0 8px 20px hsla(2, 100%, 45%, .28);
+    transition: .4s;
+}
+
+.home__button:hover {
+    background-color: $Background;
+    color: $text-color;
+    border: 1px solid $heading;
+}
+
+// --- Image ---
+.home__image {
+    width: 320px;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    align-content: center;
+}
+
+// --- SLIDER ---
+.home__swiper {
     width: 500px;
     padding-top: 50px;
     padding-bottom: 50px;
+    overflow: hidden;
 }
 
 .swiper-slide {
@@ -261,67 +232,146 @@ header {
     background-image: none;
 }
 
-// Responsive
+// --- SOCIAL MEDIA ---
+.home__soc-med {
+    position: fixed;
+    top: 50%;
+    right: 3%;
+}
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-    .mobile-nav {
-        visibility: visible;
-        opacity: 1;
-        width: 32px;
-        height: 32px;
-        background: url(../img/menu1.png);
-        background-size: 32px;
-        background-repeat: no-repeat;
-        background-position: center;
-        cursor: pointer;
-        position: relative;
-        z-index: 2;
-        // display: block;
+.soc-med__list {
+    font-size: 2rem;
+}
+
+.soc-med__link {
+    color: $heading;
+
+    :hover {
+        color: $text-nav;
+        transform: translateX(-.3em);
+        transition: all .1s ease-in-out;
+    }
+}
+
+// ======================== BREAKPOINTS ========================
+// small device
+@media screen and (max-width: 330px) {
+    .home__title {
+        max-width: 200px;
     }
     
+    .home__desc {
+        max-width: 210px;
+    }
 
-    header {
-        .navigation {
-            display: none;
+    .home__image {
+        width: 200px;
+    }
+
+    .swiper-slide {
+        height: 270px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .home__image {
+        width: 200px;
+    }
+
+    .swiper-slide {
+        height: 270px;
+    }
+}
+
+
+// medium device
+@media screen and (min-width: 769px) {
+    .header {
+        background-color: transparent;
+    }
+
+    .nav {
+        height: calc($header-height) + 1.5rem;
+    }
+
+    .nav__toggle, .nav__close {
+        display: none;
+    }
+
+    .nav__list {
+        flex-direction: row;
+        column-gap: 3rem;
+        font-size: 15pt;
+    }
+
+    .nav__logo {
+        padding-top: 0.8em;
+    }
+
+    .nav__link {
+        color: $text-color;
+    }
+
+    .nav__link:hover {
+        color: $text-nav;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .nav__link {
+        color: $text-nav;
+    }
+    
+    .nav__link:hover {
+        color: $text-color;
+    }
+
+    .home__container {
+        padding-top: 11rem;
+        grid-template-columns: repeat(2, max-content);
+        align-items: center;
+        justify-content: space-between;
+        margin-right: 5em;
+    }
+
+    .bg__circle {
+        display: block;
+        clip-path: circle(70% at right 0%);
+    }
+
+    .soc-med__link {
+        color: $text-color;
+
+        :hover {
+            color: $text-nav;
         }
     }
-    
-    // header {
-    //     .navigation {
-    //         width: 100%;
-    //         // position: absolute;
-    //         background-color: rgb(83, 83, 83);
-    //         opacity: 50%;
-    //         height: calc(100vh - 50px);
-    //         top: 2em;
-    //         display: none;
-    //         left: 0;
-    //         right: 0;
-    //     }
-    // }
-    
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
+// Large device
+@media screen and (min-width: 1024px) {
+    .bg__circle {
+        clip-path: circle(70% at right -20%);
+    }
 
+    .home__desc {
+        max-width: 457px;
+    }
+
+    .home__image {
+        width: 465px;
+    }
+
+    .home__soc-med {
+        top: 45%;
+        right: 1.5%;
+    }
+
+    .home, .home__container {
+        height: 100vh;
+    }
+
+    .home__container {
+        padding-top: 5rem;
+    }
 }
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-
-}
-
-
-
